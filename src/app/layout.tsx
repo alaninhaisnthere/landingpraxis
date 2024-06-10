@@ -8,6 +8,7 @@ import Script from 'next/script';
 import "./globals.css";
 
 import { metadata } from "./metadata";
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -88,7 +89,6 @@ export default function AppLayout({
       </head>
       <body className={`${montserrat.className} min-h-screen flex flex-col`}>
         <NextUIProvider>
-          <Header />
           <section className="text-balance container flex-grow">
             {children}
           </section>
