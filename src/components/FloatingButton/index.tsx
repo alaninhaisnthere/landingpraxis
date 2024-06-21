@@ -24,11 +24,13 @@ const FloatingButton: React.FC = () => {
 
   const handleClick = () => {
     if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-16557313988/OTj9CKHulLQZEMSfktc9',
-        value: 1.0,
-        currency: 'BRL',
+      window.gtag('event', 'click', {
+        event_category: 'WhatsApp Button',
+        event_label: 'WhatsApp Contact',
       });
+    }
+    if (window.fbq) {
+      window.fbq('track', 'Contact');
     }
   };
 
@@ -41,6 +43,7 @@ const FloatingButton: React.FC = () => {
         onClick={handleClick}
       >
         <div
+          onClick={handleClick}
           className={`bg-green-500 text-white ${isMobile ? "p-4" : "p-6"} 
           rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 w-auto animate-bounce`}
         >

@@ -43,7 +43,7 @@ export default function AppLayout({
         <title>{typeof metadata.title === 'string' ? metadata.title : "Pós-graduação Práxis"}</title>
         <meta name="description" content={typeof metadata.description === 'string' ? metadata.description : ""} />
 
-        {/* Google Ads */}
+        {/* google tags */}
         <Script
           id="google-ads-init"
           strategy="afterInteractive"
@@ -62,7 +62,13 @@ export default function AppLayout({
           }}
         />
 
-        {/* Facebook Pixel */}
+         {/* CRM */}
+         <Script
+          type="text/javascript"
+          async
+          src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/8e893d2a-5e00-4d0f-9db4-aa427f58a482-loader.js" />
+
+        {/* pixel */}
         <Script
           id="fb-pixel-init"
           strategy="afterInteractive"
@@ -78,6 +84,8 @@ export default function AppLayout({
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '997382224690371');
               fbq('track', 'PageView');
+              fbq('track', 'Contact');
+              fbq('track', 'ViewContent');
             `,
           }}
         />
